@@ -8,19 +8,18 @@ This project is a **Django Rest Framework (DRF)** based **Courier Service API** 
 - **Delivery Driver** can view assigned parcels and update their delivery status.
 - **Customer** can track their parcels and update the delivery address.
 - **Role-based access control (RBAC)** implemented.
-- **Soft delete** mechanism to prevent permanent data loss.
+- **Soft delete** mechanism to prevent permanent data loss from database.
 
 ## Technologies Used
 - **Backend:** Django, Django Rest Framework (DRF)
 - **Authentication:** JWT (JSON Web Token)
-- **Database:** SQLite (default) / PostgreSQL (optional)
-- **Frontend (Optional):** React or simple HTML/CSS with JavaScript for API interaction
+- **Database:** SQLite (default) 
+
 
 ## Installation & Setup
 
-### Prerequisites
 Ensure you have installed:
-- Python 3.x
+- Python 3
 - pip (Python package manager)
 - Virtual environment tool (`venv`)
 
@@ -69,49 +68,28 @@ Ensure you have installed:
   ```json
   {
     "username": "admin",
-    "password": "adminpass"
+    "password": "admin"
   }
   ```
 - **Refresh Token**: `POST /api/token/refresh/`
 
 ### Parcel Management (Admin)
-- **Create Parcel**: `POST /api/parcels/`
-- **Update Parcel**: `PUT /api/parcels/{id}/`
-- **Delete Parcel (Soft Delete)**: `DELETE /api/parcels/{id}/`
+- **Create Parcel**: `POST /api/packages/`
+- **Update Parcel**: `PUT /api/packages/<int:pk>//`
+- **Delete Parcel (Soft Delete)**: `DELETE /api/packages/<int:pk>//`
 
 ### Delivery Driver
-- **View Assigned Parcels**: `GET /api/parcels/assigned/`
-- **Update Parcel Status**: `PATCH /api/parcels/{id}/status/`
+- **View Assigned Parcels**: `GET /api/assigned_packages/`
+- **Update Parcel Status**: `PATCH /api/update_status/<int:pk>//`
 
 ### Customer
-- **Track Parcel**: `GET /api/parcels/{tracking_id}/`
-- **Update Delivery Address**: `PATCH /api/parcels/{id}/address/`
+- **Track Parcel**: `GET /api/track/<str:t_number>/`
 
----
-## Running Tests
-Run the test suite to ensure everything is working correctly:
-```sh
-python manage.py test
-```
 
-## Deployment
-For deployment, consider using:
-- **Docker** for containerization
-- **PostgreSQL** instead of SQLite for production
-- **Gunicorn & Nginx** for serving the Django application
 
-## Contributing
-1. Fork the repository
-2. Create a new branch (`feature/your-feature`)
-3. Commit your changes (`git commit -m "Added new feature"`)
-4. Push to the branch (`git push origin feature/your-feature`)
-5. Open a Pull Request
+## I have used POSTMAN for checking the CRUD operation of the project.
 
-## License
-This project is licensed under the MIT License. See `LICENSE` for details.
 
-## Contact
-For any issues, reach out to: [your-email@example.com](mailto:your-email@example.com)
 
 
 
