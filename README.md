@@ -87,7 +87,23 @@ Ensure you have installed:
 
 
 
-## I have used POSTMAN for checking the CRUD operation of the project.
+## API Testing Tools  
+- **Postman** (for manual testing)  
+- **pytest-django** (for automated API testing in Django)  
+- **cURL** (for CLI-based API testing)
+- I used POSTMAN for API testing of this project.
+- In below You will find a short tutorial of POSTMAN for testing your project.
+  
+### Testing with Postman  
+1. Install Postman from [postman.com](https://www.postman.com/).  
+2. Import the provided `Postman Collection` (if available).  
+3. Use the following endpoints:  
+   - **Get all parcels**: `GET /api/packages/`  
+   - **Create a new parcel**: `POST /api/packages/`  
+   - **Update a parcel**: `PUT /api/packages/<int:pk>/`  
+   - **Delete a parcel**: `DELETE /api/packages/<int:pk>//`  
+4. Use an authentication token.  
+
 
 
 
